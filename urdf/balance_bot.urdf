@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot name="balance_bot">
+
+  <material name="purple">
+    <color rgba="0.58 0.0 0.83 1.0"/>
+  </material>
+  <material name="pink">
+    <color rgba="1.0 0.41 0.70 1.0"/>
+  </material>
+
+  <!-- Taban / Merkez Bağlantı Noktası -->
+  <link name="base_link"/>
+
+  <!-- Robotun Dik Gövdesi -->
+  <link name="chassis">
+    <visual>
+      <origin xyz="0 0 0.25" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.2 0.5"/>
+      </geometry>
+      <material name="pink"/>
+    </visual>
+  </link>
+
+  <!-- Gövde Eklemi (Pitch Açısı ile Eğilecek Bölüm) -->
+  <joint name="pitch_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Sol Tekerlek -->
+  <link name="left_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+      <material name="purple"/>
+    </visual>
+  </link>
+
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0 0.13 0.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <!-- Sağ Tekerlek -->
+  <link name="right_wheel">
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <geometry>
+        <cylinder radius="0.1" length="0.05"/>
+      </geometry>
+      <material name="purple"/>
+    </visual>
+  </link>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0 -0.13 0.1" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+</robot>
