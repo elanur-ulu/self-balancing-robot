@@ -1,1 +1,0 @@
-install(DIRECTORY urdf DESTINATION share/${PROJECT_NAME})
