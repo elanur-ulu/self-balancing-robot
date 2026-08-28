@@ -5,25 +5,28 @@ Bu proje, iki tekerlekli bir denge robotunun (self-balancing robot) modellenmesi
 ---
 
 ## Proje Özeti
+
 Robot, gövdesinin dikey eksendeki eğim açısını (pitch) koruyarak dengede kalmak üzere tasarlanmıştır. IMU üzerinden alınan açısal pozisyon ve hız verileri işlenerek **PID kontrol algoritması** ile motorlara gerekli tork/hız komutları iletilir.
 
 ---
 
 ## Kullanılan Teknolojiler & Araçlar
-* **İşletim Sistemi:** Linux (Ubuntu / WSL2)
+
+* **İşletim Sistemi:** Linux (Ubuntu / WSL 2)
 * **Ara Katman Yazılımı:** ROS 2
 * **Modelleme:** URDF (Unified Robot Description Format)
-* **Diller:** C++ / Python
+* **Dil:** C++17
 * **Algoritma:** PID Kontrol (Proportional-Integral-Derivative)
 
 ---
 
 ## Paket Yapısı
+
 ```text
 balance_bot_control/
 ├── CMakeLists.txt
 ├── package.xml
 ├── src/
-│   └── balance_node.cpp      # Denge ve PID kontrol düğümü
+│   └── balance_node.cpp    # Denge ve PID kontrol düğümü
 └── urdf/
-    └── balance_bot.urdf      # Robotun mekanik ve görsel URDF modeli
+    └── balance_bot.urdf     # Robotun mekanik ve görsel URDF modeli
