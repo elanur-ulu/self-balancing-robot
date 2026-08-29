@@ -16,7 +16,7 @@ The robot is designed to maintain its balance by preserving the tilt angle (pitc
 * **Middleware:** ROS 2
 * **Modeling:** URDF (Unified Robot Description Format)
 * **Programming Language:** C++17
-* **Algorithm:** PID Kontrol (Proportional-Integral-Derivative)
+* **Algorithm:** PID Control (Proportional-Integral-Derivative)
 
 ---
 
