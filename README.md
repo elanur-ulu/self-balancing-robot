@@ -1,32 +1,32 @@
 # Two-Wheeled Self-Balancing Robot (ROS 2)
 
-Bu proje, iki tekerlekli bir denge robotunun (self-balancing robot) modellenmesi, kinematik yapısının tanımlanması ve **ROS 2** ortamında PID tabanlı kapalı çevrim kontrolünün gerçekleştirilmesini içerir.
+This project involves modeling a two-wheeled self-balancing robot, defining its kinematic structure, and implementing PID-based closed-loop control within the **ROS 2** environment.
 
 ---
 
-## Proje Özeti
+## Project Summary
 
-Robot, gövdesinin dikey eksendeki eğim açısını (pitch) koruyarak dengede kalmak üzere tasarlanmıştır. IMU üzerinden alınan açısal pozisyon ve hız verileri işlenerek **PID kontrol algoritması** ile motorlara gerekli tork/hız komutları iletilir.
-
----
-
-## Kullanılan Teknolojiler & Araçlar
-
-* **İşletim Sistemi:** Linux (Ubuntu / WSL 2)
-* **Ara Katman Yazılımı:** ROS 2
-* **Modelleme:** URDF (Unified Robot Description Format)
-* **Dil:** C++17
-* **Algoritma:** PID Kontrol (Proportional-Integral-Derivative)
+The robot is designed to maintain its balance by preserving the tilt angle (pitch) of its body along the vertical axis. Angular position and velocity data obtained from the IMU are processed, and the necessary torque/speed commands are transmitted to the motors via a **PID control algorithm**.
 
 ---
 
-## Paket Yapısı
+## Technologies & Tools Used
+
+* **Operating System:** Linux (Ubuntu / WSL 2)
+* **Middleware:** ROS 2
+* **Modeling:** URDF (Unified Robot Description Format)
+* **Programming Language:** C++17
+* **Algorithm:** PID Kontrol (Proportional-Integral-Derivative)
+
+---
+
+## Package Structure
 
 ```text
 balance_bot_control/
 ├── CMakeLists.txt
 ├── package.xml
 ├── src/
-│   └── balance_node.cpp    # Denge ve PID kontrol düğümü
+│   └── balance_node.cpp    # Balance and PID control node
 └── urdf/
-    └── balance_bot.urdf     # Robotun mekanik ve görsel URDF modeli
+    └── balance_bot.urdf     # Mechanical and visual URDF model of the robot
